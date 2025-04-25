@@ -1,0 +1,54 @@
+---
+# jenkins流水线运行时的配置
+
+##### web配置 #####
+Web:
+  CodeCredId: 拉取项目仓库代码的用户
+  CodeBranch: 仓库项目代码分支
+  CosiCredId: cosign-password [cosign签名认证密钥]
+  Webhook: xxxxxxxxxxxxxxxxxxxx
+  ImgUrl: xxxxxxxxxxxxxxxxxxx
+  ImgPath: 镜像在harbor上的路径
+  HelmPkgName: helm包名称
+  HelmPkgVersion: helm包版本
+  BuildCmd: "yarn && yarn build:test"
+  ScannerSourcesPath: .
+  ScannerExclusionsPath: 
+
+##### wap配置 #####
+Wap:
+  CodeCredId: xxxxxxxxx
+  CodeBranch: test
+  CosiCredId: cosign-password
+  Webhook: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ImgUrl: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ImgPath: xxxxxxxxxxxxxxxxxxxxxx
+  HelmPkgName: xxxxxxxxxxxxxxxxxx
+  HelmPkgVersion: 1.0.5
+  BuildCmd: xxxxxxxxxxxxxxxxx
+  ScannerSourcesPath: .
+  ScannerExclusionsPath: xxxxxxxxxxxxx
+  EnvPath: xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+##### api配置 ####
+ApiFpm:
+  CodeCredId: xxxxxxxxxxxxxxxx
+  CodeBranch: test
+  CosiCredId: cosign-password
+  Webhook: xxxxxxxxxxxxxxxxxxxxxxxxx
+  ImgUrl: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ImgPath: xxxxxxxxxxxxxxxxxxxxx
+  HelmPkgName: xxxxxxxxxxxxxxxxxxxx
+  HelmPkgVersion: 2.0.2
+  BuildCmd: 项目依赖安装和打包的命令
+
+ApiHyperf:
+  CodeCredId: jenkins-deploy
+  CodeBranch: test
+  CosiCredId: cosign-password
+  Webhook: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ImgUrl: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ImgPath: xxxxxxxxxxxxxxxxxxx
+  HelmPkgName: xxxxxxxxxxxxxxxxxxxxx
+  HelmPkgVersion: 1.0.6
+  BuildCmd: 项目依赖安装和打包的命令

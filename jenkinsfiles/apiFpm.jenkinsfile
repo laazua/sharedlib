@@ -1,0 +1,11 @@
+#!groovy
+
+// fpm框架
+
+import org.cicd.enums.PipelineType
+
+
+@Library('sharedlib@btest') _
+
+
+LoadPipeline PipelineType.APIFPM
