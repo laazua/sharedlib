@@ -4,4 +4,4 @@
 ###    branch => 共享库当前使用分支 (@Library('sharedlib@dev') _)
 
 
-webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxx
+name: react_xxx
