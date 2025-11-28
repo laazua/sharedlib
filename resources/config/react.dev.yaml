@@ -1,0 +1,7 @@
+### 不同环境的配置
+### 命名: name.branch.yaml
+###    name => 项目名
+###    branch => 共享库当前使用分支 (@Library('sharedlib@dev') _)
+
+
+webhook: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxx

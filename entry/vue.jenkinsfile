@@ -1,0 +1,13 @@
+@Library('sharedlib@test') _
+
+import com.laazua.lib.enums.ProjectType
+
+runPipeline(
+    // 传入的 参数字符串 要与枚举中定义的一致
+    ProjectType.fromValue('vue'),
+    // 项目必要，但是不常修改的参数，在这里传入(参数命名规则 sharedlib 开头)
+    [
+        sharedlibType: 'vue',
+        sharedlibBranch: 'test', // 必传！与上面保持一致！用于读取配置是区分
+    ]
+)

@@ -1,0 +1,11 @@
+---
+## 测试环境的公共配置
+
+
+##### 通知消息配置
+webhook: 消息通知地址
+
+##### CI/CD 目标仓库配置
+repository: 仓库地址
+branch: 仓库分支
+credentialsId: 认证ID[ 在jenkins服务中配置 => auth-G5p8vefj ]

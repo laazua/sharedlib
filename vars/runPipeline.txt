@@ -1,0 +1,25 @@
+runPipeline
+===========
+
+描述
+----
+主要CI/CD流水线执行器，支持多种项目类型的自动化构建。
+
+参数
+----
+* projectType   (ProjectType, 必需)   - 项目类型: java, nodejs, go, python
+* config        (Map, 必需)           - 流水线配置
+
+
+示例
+----
+runPipeline(
+    ProjectType.fromValue('go'),
+    [
+        name: 'go',
+    ]
+)
+
+注意事项
+--------
+- ProjectType.fromValue('go') 传入的字符串 `go` 要求与枚举中定义的一致
