@@ -1,6 +1,7 @@
 package com.laazua.lib.pipelines.api
 
 import com.laazua.lib.pipelines.BasePipeline
+import com.laazua.lib.utilities.GitTool
 
 
 class PythonPipeline extends BasePipeline {
@@ -25,11 +26,7 @@ class PythonPipeline extends BasePipeline {
     protected void stages() {
         script.stage('检出代码') {
             script.sh "echo 'Python 检出代码'"
-            // GitTool.checkout([
-            //     repositoryUrl: config.repository,
-            //     branch: config.branch,
-            //     credentialsId: config.credentialsId,
-            // ])
+	    //GitTool.checkout(script, config)
         }
 
         script.stage('单元测试') {
