@@ -19,7 +19,9 @@ import com.laazua.lib.pipelines.web.ReactPipeline
 def call(ProjectType projectType, Map config = [:]) {
     echo "=== 开始运行流水线 ==="
 
-    // 默认配置,配置流水线本身相关参数,(参数命名规则 options 开头)
+    // 默认配置,配置流水线本身相关参数(参数命名规则: options 开头)
+    // 这里定义的所有参数,在 BasePipeline.groovy 中的 options 属性 须有对应的定义
+    // 并在 setupPipelineOptions 方法进行重载
     def defaultConfig = [
         optionsTimeout: 60,                    // 构建超时时间
         optionsTimeoutUnit: 'MINUTES',         // 构建超时单位
