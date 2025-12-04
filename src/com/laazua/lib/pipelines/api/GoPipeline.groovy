@@ -2,6 +2,7 @@ package com.laazua.lib.pipelines.api
 
 import com.laazua.lib.pipelines.BasePipeline
 import com.laazua.lib.utilities.GitTool
+import com.laazua.lib.enums.CredentialsType
 
 
 class GoPipeline extends BasePipeline {
@@ -35,6 +36,11 @@ class GoPipeline extends BasePipeline {
         script.stage('检出代码') {
             script.sh "echo 'Go 检出代码'"
             //GitTool.checkout(script, config)
+            def credentials = script.parseCredentials(CredentialsType.PASSWD, config.credentialsId)
+            script.sh """
+                echo '${credentials.username}'
+                echo '${credentials.password}'
+            """
         }
 
         script.stage('单元测试') {
